@@ -16,11 +16,12 @@ Optical character recognition (OCR) is a subset of computer vision that deals wi
 ## Prepare to Use the Azure AI Vision SDK
 1. Open Visual Studio Code, navigate to the `20-ocr` folder, and expand either the C-Sharp or Python folder based on your preference.
 2. Right-click the `read-text` folder, open an integrated terminal, and install the Azure AI Vision SDK package:
-C#:
+
+**C#**:
 ```
 dotnet add package Microsoft.Azure.CognitiveServices.Vision.ComputerVision --version 6.0.0
 ```
-Python
+**Python**:
 ```
 pip install azure-cognitiveservices-vision-computervision==0.7.0
 ```
@@ -32,13 +33,13 @@ pip install azure-cognitiveservices-vision-computervision==0.7.0
 	- **C#**: Program.cs
 	- **Python**: read-text.py
 - Open the code file and at the top, under the existing namespace references, find the comment **Import namespaces**. Then, under this comment, add the following language-specific code to import the namespaces you will need to use the Azure AI Vision SDK:
-C#
+**C#**
 ```
 // import namespaces
 using Microsoft.Azure.CognitiveServices.Vision.ComputerVision;
 using Microsoft.Azure.CognitiveServices.Vision.ComputerVision.Models;
 ```
-Python
+**Python**
 ```
 # import namespaces
 from azure.cognitiveservices.vision.computervision import ComputerVisionClient
@@ -46,7 +47,8 @@ from azure.cognitiveservices.vision.computervision.models import OperationStatus
 from msrest.authentication import CognitiveServicesCredentials
 ```
 5. In the code file for your client application, in the Main function, note that the code to load the configuration settings has been provided. Then find the comment Authenticate Azure AI Vision client. Then, under this comment, add the following language-specific code to create and authenticate a Azure AI Vision client object:
-C#
+
+**C#**
 ```// Authenticate Azure AI Vision client
 ApiKeyServiceClientCredentials credentials = new ApiKeyServiceClientCredentials(cogSvcKey);
 cvClient = new ComputerVisionClient(credentials)
@@ -54,7 +56,7 @@ cvClient = new ComputerVisionClient(credentials)
     Endpoint = cogSvcEndpoint
 };
 ```
-Python
+**Python**
 ```
 # Authenticate Azure AI Vision client
 credential = CognitiveServicesCredentials(cog_key) 
@@ -68,7 +70,8 @@ The <b>Read</b> API uses an asynchronous operation model, in which a request to 
 1. In the code file for your application, in the Main function, examine the code that runs if the user selects menu option 1. This code calls the GetTextRead function, passing the path to an image file.
 2. In the read-text/images folder, click on Lincoln.jpg to view the file that your code will process.
 3. Back in the code file in Visual Studio Code, find the GetTextRead function, and under the existing code that prints a message to the console, add the following code:
-C#
+
+**C#**
 ```
 // Use Read API to read text in image
 using (var imageData = File.OpenRead(imageFile))
@@ -106,7 +109,7 @@ using (var imageData = File.OpenRead(imageFile))
     }
 }  
 ```
-Python
+**Python**
 ```
 # Use Read API to read text in image
 with open(image_file, mode="rb") as image_data:
@@ -133,26 +136,28 @@ with open(image_file, mode="rb") as image_data:
 ```
 4. Examine the code you added to the GetTextRead function. It submits a request for a read operation, and then repeatedly checks status until the operation has completed. If it was successful, the code processes the results by iterating through each page, and then through each line.
 5. Save your changes and return to the integrated terminal for the read-text folder, and enter the following command to run the program:
-C#
+
+**C#**
 ```
 dotnet run
 ```
-Python
+**Python**
 ```
 python read-text.py
 ```
-6. When prompted, enter 1 and observe the output, which is the text extracted from the image.
-7. If desired, go back to the code you added to GetTextRead and find the comment in the nested for loop at the end, uncomment the last line, save the file, and rerun steps 5 and 6 above to see the bounding box of each line. Be sure to re-comment that line and save the file before moving on.
+6. When prompted, enter **1** and observe the output, which is the text extracted from the image.
+7. If desired, go back to the code you added to **GetTextRead** and find the comment in the nested for loop at the end, uncomment the last line, save the file, and rerun steps 5 and 6 above to see the bounding box of each line. Be sure to re-comment that line and save the file before moving on.
 
 ## Use the Read API to read text from a document
 1. In the code file for your application, in the Main function, examine the code that runs if the user selects menu option 2. This code calls the GetTextRead function, passing the path to a PDF document file.
 2. In the read-text/images folder, right-click Rome.pdf and select Reveal in File Explorer. Then in File Explorer, open the PDF file to view it.
 3. Return to the integrated terminal for the read-text folder, and enter the following command to run the program:
-C#
+
+**C#**
 ```
 dotnet run
 ```
-Python
+**Python**
 ```
 python read-text.py
 ```
@@ -164,6 +169,7 @@ In addition to printed text, the Read API can extract handwritten text in Englis
 1. In the code file for your application, in the Main function, examine the code that runs if the user selects menu option 3. This code calls the GetTextRead function, passing the path to an image file.
 2. In the read-text/images folder, open Note.jpg to view the image that your code will process.
 3. In the integrated terminal for the read-text folder, and enter the following command to run the program:
+
 **C#**
 ```
 dotnet run
