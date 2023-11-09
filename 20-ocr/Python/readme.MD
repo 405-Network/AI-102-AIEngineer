@@ -1,5 +1,5 @@
 # Read Text in Images Lab
-
+[Link to Microsoft Docs](https://microsoftlearning.github.io/AI-102-AIEngineer/Instructions/20-ocr.html)
 ## Introduction
 Optical character recognition (OCR) is a subset of computer vision that deals with reading text in images and documents. In this lab, you will explore two APIs provided by Azure AI Vision service for reading text.
 
