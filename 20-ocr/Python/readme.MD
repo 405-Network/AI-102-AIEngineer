@@ -15,7 +15,7 @@ Optical character recognition (OCR) is a subset of computer vision that deals wi
 
 ## Prepare to Use the Azure AI Vision SDK
 1. Open Visual Studio Code, navigate to the `20-ocr` folder, and expand either the C-Sharp or Python folder based on your preference.
-2. Right-click the `read-text` folder, open an integrated terminal, and install the Azure AI Vision SDK package:
+2. Right-click the `read-text` folder, open an integrated terminal, and install the Azure AI Vision SDK package:  
 C#:
 ```dotnet add package Microsoft.Azure.CognitiveServices.Vision.ComputerVision --version 6.0.0```
 Python
