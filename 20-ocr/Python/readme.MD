@@ -19,6 +19,7 @@ Optical character recognition (OCR) is a subset of computer vision that deals wi
 C#
 
 ```dotnet add package Microsoft.Azure.CognitiveServices.Vision.ComputerVision --version 6.0.0```
+
 Python
 
 ```pip install azure-cognitiveservices-vision-computervision==0.7.0```
